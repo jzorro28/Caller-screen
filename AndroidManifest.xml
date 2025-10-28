@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.callerscreen">
+
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ANSWER_PHONE_CALLS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- Overlay permission is requested at runtime via ACTION_MANAGE_OVERLAY_PERMISSION -->
+
+    <application
+        android:allowBackup="true"
+        android:label="CallerScreen"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        <!-- Receiver to detect phone state (legacy approach) -->
+        <receiver android:name=".IncomingCallReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".OverlayActivity"
+            android:exported="true"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+            android:showOnLockScreen="true"
+            android:turnScreenOn="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <service android:name=".OverlayService" android:exported="false" />
+
+    </application>
+
+</manifest>

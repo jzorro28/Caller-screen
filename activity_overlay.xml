@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <Button
+        android:id="@+id/answerBtn"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:text="Answer"
+        android:textSize="24sp"
+        android:layout_margin="16dp"
+        android:background="#2ecc71"
+        android:textColor="#ffffff"/>
+
+    <Button
+        android:id="@+id/rejectBtn"
+        android:layout_width="300dp"
+        android:layout_height="120dp"
+        android:text="Reject"
+        android:textSize="24sp"
+        android:layout_margin="16dp"
+        android:background="#e74c3c"
+        android:textColor="#ffffff"/>
+
+</LinearLayout>
